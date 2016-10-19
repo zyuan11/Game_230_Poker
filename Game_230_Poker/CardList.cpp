@@ -121,12 +121,13 @@ card* CardList::RemoveCard() {
 	while (curr != NULL) {
 		if (!curr->f_Keep) {
 			prev->next = curr->next;
+			curr->next = NULL;
 			return curr;
 		}
 		prev = prev->next;
 		curr = curr->next;
 	}
-
+	
 	return NULL;
 }
 
@@ -137,6 +138,7 @@ card* CardList::RemoveCard(CardVal val_i, Suits suit_i) {
 	while (curr != NULL) {
 		if (curr->val == val_i && curr->suit == suit_i) {
 			prev->next = curr->next;
+			curr->next = NULL;
 			return curr;
 		}
 		prev = prev->next;
