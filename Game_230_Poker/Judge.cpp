@@ -490,6 +490,10 @@ void Judge::Swap() {
 		deck->GetCard(player.myHand->RemoveCard(SwapLetterToNum(idx)));
 		player.myHand->GetCard(deck->RemoveCard((CardVal)val, suit_i));
 		player.MyHandDisplay();
+		cin.clear();
+		cin.ignore(INT_MAX, '\n');
+		Op();
+		return;
 	}
 }
 #pragma region SwapMethods
